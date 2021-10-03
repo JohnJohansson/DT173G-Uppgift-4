@@ -1,0 +1,207 @@
+// the geeneral layout of the page
+
+body {
+    background-color: $color2;
+    position        : relative;
+    min-height      : 100vh;
+}
+
+// header -----------------------
+.header-wrapper {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 60px;
+    width          : 85vw;
+    padding        : 1vw 10vw;
+}
+
+// line above main content
+.line {
+    background-color: $color4;
+    width           : 100%;
+    height          : 15px;
+}
+
+// main content ---------------------
+
+.main {
+    @include main;
+    margin     : 0 auto;
+    margin-left: 25%;
+    float      : left;
+    background : rgba(255, 250, 205, 0.164);
+    margin-top : 2%;
+
+    h2 {
+        text-align    : center;
+        color         : $color1;
+        font-size     : 26px;
+        padding-top   : 5%;
+        padding-bottom: 3%;
+        background    : rgba(0, 0, 0, 0.521);
+
+    }
+
+    p {
+        color         : $color1;
+        background    : rgba(0, 0, 0, 0.281);
+        padding-top   : 3%;
+        padding-bottom: 5%;
+        width         : 50%;
+        margin        : 0 auto;
+        line-height   : 150%;
+    }
+}
+
+// side bar--------------------------
+
+.sidebar {
+
+    float           : right;
+    background-color: $color3;
+    margin-right    : 4%;
+    margin-top      : 2%;
+    margin-bottom   : 10%;
+    width           : 25%;
+    padding-bottom  : 10%;
+
+    .text {
+        width : 80%;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h2 {
+        color     : $color1;
+        text-align: center;
+        font-size : 26px;
+    }
+
+    p {
+        color    : $color1;
+        font-size: 16px
+    }
+}
+
+// clear before footer
+.clear {
+    clear     : both;
+    margin-top: 5%;
+    height    : 100px;
+    width     : 100%;
+}
+
+// footer ---------------
+footer {
+    background-color: rgb(0, 0, 0);
+    min-height      : 200px;
+    width           : 100%;
+    color           : $color1;
+    position        : absolute;
+    bottom          : 0;
+    display         : flex;
+    justify-content : space-around;
+}
+
+/*---------------------- hamburger menu--------------------------------- */
+
+.hamburger-wrapper {
+    display : none;
+    position: relative;
+}
+
+.active {
+    border-bottom: solid 3px #707070;
+    width        : 100%;
+}
+
+@media screen and (max-width: 1055px) {
+    body {
+        padding-bottom: 5rem;
+    }
+
+    .main {
+        @include main($main: true);
+        margin-left        : 0%;
+        margin             : 0 auto;
+        float              : none;
+    }
+
+    // side bar--------------------------
+
+    .sidebar {
+
+        float           : none;
+        background-color: $color3;
+        margin          : 0 auto;
+        margin-top      : 5%;
+        width           : 96%;
+
+        img {
+            float      : right;
+            width      : 31vh;
+            margin-left: 1%;
+
+        }
+    }
+
+    footer {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    header {
+        .main-menu {
+            display: none;
+        }
+    }
+
+    /*---------------------- hamburger menu--------------------------------- */
+
+    .hamburger-wrapper {
+        display : block;
+        width   : 100%;
+        position: absolute;
+        top     : 2%;
+
+        .toggle {
+            width      : 10%;
+            font-size  : 33px;
+            margin-left: 15px;
+        }
+
+        .hamburgerMenu {
+            display         : none;
+            position        : relative;
+            z-index         : 10;
+            background-color: $color2;
+            margin-top      : 1%;
+            width           : 100%;
+            position        : absolute;
+            list-style      : none;
+        }
+
+        a {
+            color           : $color1;
+            font-size      : 24px;
+            display        : block;
+            padding        : 20px 16px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: $color2_light;
+            color           : $color4_dark;
+        }
+
+        .fa-bars {
+            color: $color1;
+        }
+    }
+
+}
