@@ -1,12 +1,10 @@
 # DT173G-Webbutveckling-3
 School assignment to learn git
 
-## Assignment 3
-An continuation on assigment 2
+## Assignment 4
+An continuation on assigment 3
 
-In this continuation I added suport for cscc in my gulp projekt
-
-NodeJs and automatisation with Gulp.
+In this continuation I added suport for babel in my gulp projekt.
 
 ### Purpose
 
